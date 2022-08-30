@@ -1,0 +1,34 @@
+# special configuration file to use save test framework: https://github.com/saveourtool/save-cli
+[general]
+execCmd = "pylint"
+# === example of expected tests CHECK-MESSAGES: :[[@LINE-1]]:12: warning: test [warning-name] ===
+expectedWarningsPattern = "# CHECK-MESSAGES:?\\[\\[(.+)\\]\\]: (.*)"
+
+tags = ["check_only", "clang_tidy", "huawei_specific"]
+description = "Demo suite of Huawei specific tests for Clang tidy"
+suiteName = "Fixbot codecheck-python tests"
+
+runConfigPattern = "# RUN: (.+)"
+
+
+[warn]
+actualWarningsPattern=".*\\\\(.*):(\\d+): (.*)"
+
+execFlags = "-d all -e $args1 --msg-template=\"{path}:{line}: {msg_id}: {msg} ({symbol})\""
+linePlaceholder = "@LINE"
+
+exactWarningsMatch = false
+partialWarnTextMatch = true
+testNameRegex = ".*.py"
+warningTextHasColumn = false
+warningTextHasLine = true
+
+lineCaptureGroup = 1
+#columnCaptureGroup = null
+messageCaptureGroup = 2
+
+
+fileNameCaptureGroupOut = 1
+lineCaptureGroupOut = 2
+#columnCaptureGroupOut = null
+messageCaptureGroupOut = 3
