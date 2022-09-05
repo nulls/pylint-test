@@ -10,7 +10,7 @@ suiteName = "Fixbot codecheck-python tests"
 
 
 [warn]
-actualWarningsPattern=".*[\\\\/](.*):(\\d+): (.*)"
+actualWarningsPattern=".*[\\\\\\/](.*):(\\d+): (.*)"
 
 execFlags = "--msg-template=\"{path}:{line}: {msg_id}: {msg} ({symbol})\""
 linePlaceholder = "@LINE"
