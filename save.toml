@@ -1,6 +1,6 @@
 # special configuration file to use save test framework: https://github.com/saveourtool/save-cli
 [general]
-execCmd = "python -m pylint"
+execCmd = "pylint"
 # === example of expected tests CHECK-MESSAGES: :[[@LINE-1]]:12: warning: test [warning-name] ===
 expectedWarningsPattern = "# CHECK-MESSAGES:?\\[\\[(.+)\\]\\]: (.*)"
 
